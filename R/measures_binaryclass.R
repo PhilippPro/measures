@@ -86,7 +86,7 @@ Brier = function(probabilities, truth, negative, positive) {
 BrierScaled = function(probabilities, truth, negative, positive) {
   y = as.numeric(truth == positive)
   brier = mean((y - probabilities)^2)
-  inc = mean(probabilities)
+  inc = mean(y)
   brier.max = inc * (1 - inc)^2 + (1 - inc) * inc^2
   1 - brier / brier.max
 }
